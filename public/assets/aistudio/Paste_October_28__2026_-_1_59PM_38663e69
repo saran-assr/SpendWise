@@ -1,0 +1,1002 @@
+# MASTER BUILD PROMPT — SPENDWISE
+## Modern Personal Finance Management & Intelligent Expense Analytics Platform
+
+Act as a senior full-stack software engineer, product designer, financial dashboard specialist, database architect, and QA engineer.
+
+I am providing you with my existing project ZIP named **SpendWise.zip**. Your task is to deeply inspect the entire project and recreate it as a professional, modern, fully functional, production-minded personal finance management web application called **SpendWise**.
+
+Do not simply generate a landing page, static dashboard, UI prototype, or collection of nonfunctional buttons. Build a complete application with working navigation, forms, CRUD operations, calculations, data persistence, charts, reports, validation, authentication, error handling, and responsive behavior.
+
+The quality target is a polished SaaS product that could be demonstrated in a developer portfolio, presented during an interview, and extended into a real application.
+
+---
+
+# 1. FIRST: AUDIT THE EXISTING PROJECT
+
+Before writing code, inspect the uploaded ZIP thoroughly.
+
+The existing application uses:
+- Python
+- Django
+- MySQL
+- HTML5 and CSS3
+- Bootstrap 5.3
+- Bootstrap Icons
+- Chart.js
+- Vanilla JavaScript
+
+The project includes Django apps and modules such as:
+- accounts
+- transactions
+- budgets
+- savings
+- recurring
+- reports
+- notifications
+- core
+- spendwise
+
+Inspect all relevant source files, models, views, URLs, forms, templates, services, tests, migrations, configuration, and dependencies.
+
+Understand how the existing application works before redesigning it.
+
+Preserve the business logic and valuable features already implemented. Do not remove features merely because they are difficult to recreate.
+
+Identify incomplete functionality, bugs, missing validations, UI inconsistencies, security issues, and opportunities for improvement.
+
+Treat the source code as the primary reference for existing business rules.
+
+**Important:** Never expose, copy, or commit secrets from `.env`, database credentials, secret keys, tokens, or other private configuration. Use environment variables and safe example configuration instead.
+
+Do not overwrite working features blindly. If a migration or architectural change is necessary, explain it and preserve data compatibility wherever practical.
+
+# 2. PRODUCT VISION
+
+Product name: SpendWise
+
+Product category: Personal Finance Management and Expense Analytics
+
+Tagline: "Understand your money. Control your spending. Build your future."
+
+Primary objective:
+
+Help users understand their financial position, record transactions, control spending, maintain budgets, automate recurring financial entries, achieve savings goals, and make better budgeting decisions through clear analytics.
+
+Target users:
+- Students managing allowances
+- Young professionals
+- Salaried employees
+- Freelancers
+- Individuals who want to improve their financial habits
+
+The experience should feel reliable, intelligent, calm, premium, and easy to understand.
+
+Do not present SpendWise as a banking application. Do not claim to connect to real bank accounts unless an actual, secure integration has been implemented.
+
+# 3. REQUIRED TECHNOLOGY AND ARCHITECTURE
+
+First inspect the existing backend and determine which components can be preserved.
+
+Preferred architecture:
+
+Frontend:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Reusable component architecture
+- Lucide React icons
+- Recharts for interactive analytics
+- React Router for navigation
+- React Hook Form and Zod for form handling and validation where appropriate
+
+Backend:
+- Preserve the existing Python/Django business logic where possible.
+- If a separate API layer is required, implement Django REST Framework with authenticated endpoints.
+- MySQL as the persistent relational database.
+- Use Django ORM and database transactions for safe financial operations.
+
+If the development environment cannot execute Django directly, still generate a complete, clearly structured frontend and compatible backend code. Explain how to run and connect the components.
+
+Do not replace the existing database with browser storage and claim the application is production-ready.
+
+Local demo mode may use seeded mock data or IndexedDB/local storage, but it must be explicitly identified as demo mode and separated from real authenticated data.
+
+If a supported cloud backend such as Firebase or Supabase is selected instead, explain the migration from Django/MySQL, implement real persistence and authentication, and never pretend that the old backend is still connected.
+
+Use a consistent API service layer so the frontend is not tightly coupled to mock data.
+
+# 4. PREMIUM UI/UX DESIGN SYSTEM
+
+Redesign the application from the ground up while preserving its identity as SpendWise.
+
+Visual direction:
+- Modern financial SaaS dashboard
+- Clean, minimal, elegant, trustworthy
+- Excellent typography and spacing
+- Clear financial information hierarchy
+- Refined cards, charts, tables, and forms
+- Subtle transitions and meaningful micro-interactions
+
+Suggested palette:
+- Primary background: #F7F8FC
+- Main text: #172033
+- Secondary text: #667085
+- Primary accent: #635BFF
+- Positive financial values: #16A34A
+- Expense values: #DC4C4C
+- Warning: #D97706
+- Borders: #E6E9F0
+- Surface: #FFFFFF
+
+Use these as design starting points, not rigid limitations.
+
+Typography:
+- Use Inter or a similarly readable modern sans-serif.
+- Establish consistent type scales, font weights, line heights, and number formatting.
+- Make financial figures easy to scan.
+- Use tabular numerals for monetary values when supported.
+
+Layout:
+- Desktop: collapsible left sidebar, top header, spacious main content.
+- Tablet: adaptive navigation and reorganized cards.
+- Mobile: compact header, accessible navigation drawer or bottom navigation, stacked cards, and mobile-friendly forms.
+
+Navigation groups:
+
+OVERVIEW
+- Dashboard
+
+MONEY MANAGEMENT
+- Transactions
+- Categories
+- Budgets
+- Savings Goals
+- Recurring Transactions
+
+INSIGHTS
+- Reports & Analytics
+- Notifications
+
+ACCOUNT
+- Profile & Preferences
+- Security
+- Logout
+
+Include:
+- A consistent SpendWise logo treatment
+- Active navigation indicators
+- Breadcrumbs where useful
+- Search and quick actions
+- Notification indicator
+- User profile menu
+- Loading skeletons
+- Helpful empty states
+- Inline validation messages
+- Toast notifications
+- Confirmation dialogs for destructive actions
+- Tooltips for unclear financial metrics
+- Clear success, warning, and error states
+
+Use a coherent icon system. Do not mix unrelated icon styles.
+
+Avoid excessive gradients, excessive rounded cards, giant headings, decorative animations, cluttered dashboards, and low-contrast text.
+
+Animations must be subtle, useful, and respect reduced-motion preferences.
+
+# 5. PUBLIC LANDING PAGE
+
+Create a professional public-facing landing page.
+
+Include:
+- A polished navigation bar
+- SpendWise logo and tagline
+- Hero headline: "Take Control of Your Money."
+- Supporting description explaining expense tracking, budgeting, savings, and analytics
+- Primary CTA: "Get Started"
+- Secondary CTA: "Explore Features"
+- A realistic product dashboard preview
+- Feature sections
+- A three-step explanation of how SpendWise works
+- Privacy and data-security messaging
+- Frequently asked questions
+- Footer with navigation and disclaimer
+
+The dashboard preview should resemble the actual application, not an unrelated stock image.
+
+Make all navigation and calls to action functional.
+
+Avoid unsupported claims about encryption, certifications, bank integrations, or financial outcomes.
+
+# 6. AUTHENTICATION AND ONBOARDING
+
+Implement:
+- User registration
+- Login
+- Logout
+- Session management
+- Password change
+- Password reset if email delivery is configured
+- Profile management
+- Form validation
+- Useful authentication error messages
+- Protected application routes
+
+Use secure password hashing and the backend's authentication framework.
+
+Never store plaintext passwords or expose sensitive user data to the frontend.
+
+After registration, guide the user through a short onboarding flow:
+
+Step 1: Enter name and preferred currency.
+
+Step 2: Set an optional monthly income target.
+
+Step 3: Choose whether to create an initial budget.
+
+Step 4: Offer the option to create a savings goal.
+
+Allow the user to skip optional steps.
+
+Provide a clear first-login experience and useful demo data when running in demo mode.
+
+# 7. DASHBOARD — THE MOST IMPORTANT SCREEN
+
+Create an exceptional financial dashboard with real calculations based on the authenticated user's data.
+
+Header:
+- Personalized greeting
+- Current date
+- Selected reporting period
+- Quick-add transaction button
+- Optional date-range selector
+
+Summary cards:
+1. Total Income
+2. Total Expenses
+3. Net Cash Flow
+4. Savings Rate
+
+Each card should contain:
+- Clearly formatted value
+- Appropriate icon
+- Comparison with the previous equivalent period, when data exists
+- A small trend indicator
+- Tooltip explaining the metric
+
+Calculation rules:
+- Net cash flow = income minus expenses for the selected period.
+- Savings rate = (income minus expenses) / income × 100 when income is greater than zero.
+- Clearly handle periods with zero income.
+- Do not confuse savings-goal contributions with income or automatically double-count transfers.
+
+Dashboard visualizations:
+- Income versus expenses over time
+- Expense distribution by category
+- Monthly spending trend
+- Budget utilization
+- Savings-goal progress
+
+Additional sections:
+- Recent transactions
+- Highest spending categories
+- Upcoming recurring transactions
+- Budget alerts
+- Active savings goals
+- Personalized, rule-based spending insights
+
+Example insights:
+- "Food accounts for 28% of your expenses this month."
+- "Your transport budget has reached 82% utilization."
+- "You spent less this month than in the previous month."
+
+Generate insights only when the underlying data supports the statement. Show the relevant period and explain comparisons where needed.
+
+Include a meaningful first-time empty dashboard with actions to add an income entry, record an expense, set a budget, or create a savings goal.
+
+Every dashboard card, chart, and action must connect to actual data or a clearly labelled demo dataset.
+
+# 8. TRANSACTION MANAGEMENT
+
+Build a complete transaction management module.
+
+Support:
+- Income transactions
+- Expense transactions
+- Create transaction
+- View transaction details
+- Edit transaction
+- Delete transaction
+- Search transactions
+- Filter by date range
+- Filter by type
+- Filter by category
+- Filter by payment method
+- Sort by date, amount, and description
+- Pagination
+- Export filtered transactions to CSV
+
+Transaction fields:
+- Amount
+- Type: Income or Expense
+- Description
+- Category
+- Transaction date
+- Payment method
+- Optional notes
+
+Payment methods:
+- Cash
+- Credit card
+- Debit card
+- Bank transfer
+- UPI / digital wallet
+- Other
+
+Requirements:
+- Amount must be greater than zero.
+- Category type must match transaction type.
+- Dates and values must be validated on both frontend and backend.
+- Edit and delete operations must immediately update relevant summaries and charts.
+- Show confirmation before destructive actions.
+- Handle empty search results.
+- Preserve active filters during pagination where possible.
+- Prevent users from accessing or modifying another user's transactions.
+
+Use precise decimal arithmetic for monetary calculations.
+
+# 9. CATEGORY MANAGEMENT
+
+Create a category management screen.
+
+Support:
+- Default categories
+- Custom categories
+- Create category
+- Edit category
+- Delete category when safe
+- Category type: Income or Expense
+- Icon selection
+- Color selection
+- Search and filtering
+
+Provide sensible defaults such as:
+- Food
+- Groceries
+- Transport
+- Housing and Rent
+- Utilities
+- Education
+- Healthcare
+- Entertainment
+- Travel
+- Personal Care
+- Salary
+- Freelance
+- Business Income
+- Interest and Other Income
+
+Do not create confusing duplicate categories.
+
+Prevent deletion when referenced records would become invalid. Explain how the user can resolve the issue.
+
+Use category colors consistently in charts, transaction lists, and reports.
+
+# 10. BUDGET MANAGEMENT
+
+Implement monthly budgeting with accurate utilization calculations.
+
+Features:
+- Create monthly budget
+- Edit budget
+- Delete budget
+- Overall monthly expense limit
+- Category-specific monthly limits
+- Month and year selection
+- Current spending
+- Remaining amount
+- Percentage utilized
+- Status indicators
+- Budget alerts
+
+Suggested status rules:
+- Under 80%: On track
+- 80% through 99.99%: Approaching limit
+- 100% or higher: Budget exceeded
+
+Use consistent boundary conditions across the frontend and backend.
+
+Display a visual progress bar and the actual amounts spent and remaining.
+
+Example:
+Food budget: ₹5,000
+Spent: ₹3,600
+Remaining: ₹1,400
+Utilization: 72%
+
+Support filtering by month and year.
+
+Calculate spending from expense transactions in the matching period and category.
+
+Prevent duplicate budgets for the same user, category, and month/year.
+
+Overall budgets must not be double-counted with category budgets when computing total spending.
+
+Warn users when a budget is exceeded. Do not block legitimate expense entries solely because a budget has been exceeded.
+
+# 11. SAVINGS GOALS
+
+Build a dedicated savings-goal module.
+
+Each goal includes:
+- Goal name
+- Target amount
+- Current amount
+- Target date
+- Optional description
+- Status: In Progress, Completed, Paused, or Cancelled
+
+Features:
+- Create goal
+- Edit goal
+- View goal details
+- Delete goal
+- Add contribution
+- Record withdrawal
+- Contribution history
+- Progress bar
+- Amount remaining
+- Percentage completed
+- Target-date information
+- Completion celebration
+
+Example goals:
+- Emergency Fund
+- New Laptop
+- Education
+- Vacation
+- Vehicle
+- Personal Purchase
+
+Financial rules:
+- Target amount must be positive.
+- Contributions and withdrawals must be positive.
+- A withdrawal cannot make the goal balance negative.
+- A goal's current balance must be updated consistently with its contribution history.
+- Progress must be bounded visually between 0% and 100%.
+- Prevent duplicate balance changes caused by repeated requests.
+- Validate completion status against the balance and make status transitions explicit.
+
+Do not automatically treat a savings-goal contribution as an expense transaction unless a clearly defined transfer model is implemented.
+
+# 12. RECURRING TRANSACTIONS
+
+Build a functional recurring transaction manager.
+
+Support:
+- Recurring income
+- Recurring expenses
+- Weekly frequency
+- Monthly frequency
+- Yearly frequency
+- Amount
+- Description
+- Category
+- Payment method
+- Next due date
+- Active or paused status
+
+Actions:
+- Create rule
+- Edit rule
+- Pause rule
+- Resume rule
+- Delete rule
+- Process due transactions
+- View execution history
+
+Examples:
+- Monthly salary
+- Monthly rent
+- Weekly allowance
+- Monthly subscription
+- Yearly insurance payment
+
+Critical requirements:
+- Prevent duplicate transactions for the same recurring rule and scheduled occurrence.
+- Use database transactions and unique execution records or equivalent idempotency controls.
+- Correctly handle month-end dates and leap years.
+- Define how missed occurrences are processed.
+- Never silently create duplicates when the process is run twice.
+- Use clear confirmation and feedback for manual processing.
+- Display upcoming and overdue rules.
+
+Preserve the existing recurring engine and execution logs where possible.
+
+Do not pretend recurring transactions run automatically in the background unless a real scheduler or worker has been configured. Otherwise, explain how processing is triggered and provide an appropriate scheduled-job implementation.
+
+# 13. REPORTS AND ANALYTICS
+
+Create a professional analytics area.
+
+Filters:
+- This week
+- This month
+- Previous month
+- Last 3 months
+- Last 6 months
+- Last 12 months
+- Custom date range
+
+Reports:
+- Income versus expenses
+- Net cash flow
+- Category-wise expense distribution
+- Monthly income trend
+- Monthly expense trend
+- Savings rate trend
+- Budget performance
+- Transaction summary
+- Top spending categories
+- Month-over-month comparisons
+
+Charts should have:
+- Useful legends
+- Readable axes
+- Currency formatting
+- Tooltips
+- Responsive sizing
+- Accessible text summaries
+- Empty states
+
+Provide a monthly summary table containing income, expenses, net cash flow, and savings rate.
+
+Support CSV exports for filtered transactions and financial reports.
+
+If PDF export is implemented, generate a real downloadable report rather than a decorative button.
+
+Use consistent definitions across dashboard and reports. Do not fabricate missing data or imply that a partial dataset represents a complete financial history.
+
+# 14. NOTIFICATIONS AND ALERTS
+
+Create an in-app notifications center.
+
+Support:
+- Budget approaching limit
+- Budget exceeded
+- Savings goal achieved
+- Upcoming recurring transaction
+- Overdue recurring transaction
+- Relevant system notices
+
+Features:
+- Read/unread status
+- Mark as read
+- Mark all as read
+- Delete notification
+- Notification badge count
+- Relevant links to the affected budget, goal, or recurring rule
+
+Prevent repeated processing from creating duplicate notifications unnecessarily.
+
+Generate notifications from actual business events and use appropriate timestamps.
+
+Do not claim email or push delivery unless a real delivery provider is configured.
+
+# 15. PROFILE AND PREFERENCES
+
+Provide a settings page containing:
+- First name
+- Last name
+- Email
+- Phone
+- Bio
+- Preferred currency
+- Monthly income target
+- Password change
+- Notification preferences where supported
+
+Supported currencies should include:
+- INR (₹)
+- USD ($)
+- EUR (€)
+- GBP (£)
+- CAD (C$)
+- AUD (A$)
+- JPY (¥)
+- AED
+- SGD
+
+Use locale-aware formatting where appropriate.
+
+Changing the preferred currency should update displayed formatting throughout the application.
+
+Important: Changing the display currency must not silently convert existing transaction amounts. If actual currency conversion is added later, use a separate explicit conversion workflow with documented exchange-rate sources and timestamps.
+
+# 16. SEARCH, FILTERING, AND QUICK ACTIONS
+
+Provide a consistent interaction model across the application.
+
+Include:
+- Search where relevant
+- Date filters
+- Category filters
+- Sorting
+- Pagination
+- Reset filters
+- Useful no-result states
+- Keyboard-friendly forms
+- Quick-add transaction action
+- Useful confirmation messages
+
+Add a command palette or keyboard shortcuts only if they can be implemented accessibly and reliably.
+
+Do not add decorative controls that are not connected to working functionality.
+
+# 17. FUNCTIONALITY REQUIREMENTS
+
+Every visible interactive element must work.
+
+This includes:
+- Navigation links
+- Buttons
+- Forms
+- Dropdowns
+- Search fields
+- Date pickers
+- Filters
+- Pagination
+- Charts and chart filters
+- Modal dialogs
+- Toasts
+- Notification controls
+- Table actions
+- Theme controls, if offered
+
+All create, update, delete, and status-change actions must persist through the correct data layer.
+
+After any mutation:
+1. Validate the request.
+2. Persist the change.
+3. Return an understandable success or error response.
+4. Refresh affected data.
+5. Recalculate dependent totals.
+6. Update related charts and alerts.
+7. Maintain consistent state across navigation.
+
+Use optimistic updates only when failures can be rolled back correctly.
+
+Never display a success message before the operation succeeds.
+
+Handle loading, empty, success, validation-error, unauthorized, and server-error states.
+
+Do not use hardcoded totals as live dashboard metrics. Demo fixtures are acceptable only in a clearly defined demo environment.
+
+# 18. DATA MODEL AND FINANCIAL INTEGRITY
+
+Preserve or implement equivalent relational models for:
+
+User profile:
+- User
+- Preferred currency
+- Income target
+- Personal preferences
+
+Category:
+- Owner or system-default status
+- Name
+- Type
+- Icon
+- Color
+
+Transaction:
+- User
+- Category
+- Decimal amount
+- Income/expense type
+- Description
+- Date
+- Payment method
+- Notes
+
+Budget:
+- User
+- Optional category
+- Month
+- Year
+- Decimal limit
+
+Savings goal:
+- User
+- Target amount
+- Current balance
+- Target date
+- Status
+
+Savings contribution:
+- Goal
+- Amount
+- Deposit/withdrawal type
+- Date
+- Notes
+
+Recurring transaction:
+- User
+- Category
+- Amount
+- Type
+- Frequency
+- Next due date
+- Active status
+
+Recurring execution log:
+- Recurring rule
+- Scheduled occurrence
+- Created transaction
+- Execution timestamp
+- Idempotency protection
+
+Notification:
+- User
+- Message
+- Type
+- Read status
+- Timestamp
+- Optional related record
+
+Use foreign keys, validation, uniqueness constraints, and suitable indexes.
+
+Use Decimal/DECIMAL values for monetary amounts instead of floating-point storage.
+
+Enforce ownership in backend queries and mutations. Never rely on hiding UI controls as an authorization mechanism.
+
+Use database transactions for operations that update multiple related financial records.
+
+# 19. SECURITY AND PRIVACY
+
+Implement:
+- Secure authentication
+- Server-side authorization
+- Per-user data isolation
+- CSRF protection where applicable
+- Safe session and cookie settings
+- Input validation
+- Output escaping
+- ORM parameterization
+- Safe error responses
+- Secret management through environment variables
+- Secure production configuration
+- Rate limiting for sensitive endpoints where appropriate
+- CSV formula-injection protection
+- Safe handling of deletion and account changes
+
+Never expose database credentials, secret keys, stack traces, or sensitive personal information in client-visible errors.
+
+Use HTTPS in production deployments.
+
+Do not claim complete security or regulatory compliance without a proper assessment.
+
+# 20. ACCESSIBILITY AND RESPONSIVE QUALITY
+
+Meet practical WCAG 2.2 AA-oriented accessibility expectations wherever feasible.
+
+Requirements:
+- Semantic HTML
+- Keyboard navigation
+- Visible focus indicators
+- Accessible form labels
+- Appropriate ARIA attributes
+- Sufficient contrast
+- Screen-reader-friendly status messages
+- Accessible charts with textual summaries
+- Reduced-motion support
+- Usable dialogs
+- Touch-friendly controls
+
+Test the application at approximately:
+- 1440px desktop
+- 1024px laptop/tablet landscape
+- 768px tablet
+- 390px mobile
+- 360px small mobile
+
+Avoid horizontal overflow, clipped dialogs, unreadable tables, overlapping navigation, and tiny mobile buttons.
+
+Use responsive tables or card layouts on narrow screens.
+
+# 21. CODE QUALITY
+
+Use a modular, maintainable architecture.
+
+For React:
+- Separate pages, layouts, reusable components, hooks, types, API clients, schemas, and utilities.
+- Use TypeScript types for financial entities.
+- Avoid giant single-file components.
+- Avoid duplicated business logic.
+- Keep financial calculations in reusable, testable functions.
+- Use consistent error handling.
+- Add meaningful loading states.
+- Keep API logic separate from UI components.
+
+For Django:
+- Preserve clean model, form/serializer, view, service, and URL boundaries.
+- Keep business rules out of presentation templates.
+- Add database constraints and indexes where appropriate.
+- Use Django migrations.
+- Keep configuration environment-driven.
+- Maintain compatibility with existing data where feasible.
+
+Provide a README containing installation steps, environment variables, database setup, migrations, demo-data setup, test commands, and deployment guidance.
+
+Do not introduce unnecessary dependencies.
+
+# 22. TESTING AND QUALITY ASSURANCE
+
+Test the important user journeys.
+
+Authentication:
+- Registration
+- Login
+- Logout
+- Unauthorized access
+- User data isolation
+
+Transactions:
+- Create income
+- Create expense
+- Edit transaction
+- Delete transaction
+- Filter by date and category
+- Invalid amounts
+- Invalid category types
+
+Budgets:
+- Correct monthly totals
+- 80% warning
+- Budget exceeded
+- Overall and category budgets
+- Duplicate budget prevention
+
+Savings:
+- Create goal
+- Add deposit
+- Record withdrawal
+- Reject negative balance
+- Calculate progress
+- Complete goal
+
+Recurring:
+- Generate due transaction
+- Process twice without duplicates
+- Pause and resume rule
+- Handle month-end dates
+
+Reports:
+- Correct income and expenses
+- Correct net cash flow
+- Correct savings rate
+- Correct date filtering
+- Safe CSV export
+
+UI:
+- All routes render
+- No broken navigation
+- No nonfunctional buttons
+- Responsive behavior
+- Form validation
+- Loading and empty states
+- No console errors
+- No failed API requests during normal journeys
+
+Add automated tests using the test framework appropriate to the chosen architecture.
+
+Fix discovered failures rather than merely documenting them.
+
+# 23. IMPLEMENTATION ORDER
+
+Work in this sequence:
+
+Phase 1 — Audit
+- Inspect the complete project.
+- Map existing features, models, routes, and business rules.
+- Identify bugs and missing functionality.
+
+Phase 2 — Architecture
+- Define the frontend structure.
+- Preserve or implement the backend and data layer.
+- Define API contracts and types.
+- Plan data migration if necessary.
+
+Phase 3 — Design system
+- Build typography, colors, navigation, layout, cards, buttons, inputs, dialogs, tables, charts, and responsive components.
+
+Phase 4 — Core screens
+- Landing page
+- Authentication
+- Onboarding
+- Dashboard
+- Transactions
+- Categories
+- Budgets
+- Savings goals
+- Recurring transactions
+- Reports
+- Notifications
+- Profile and preferences
+
+Phase 5 — Functional integration
+- Connect forms and controls to real persistence.
+- Implement calculations.
+- Connect charts to actual data.
+- Implement validation and authorization.
+- Add error handling and loading states.
+
+Phase 6 — Quality assurance
+- Run tests.
+- Check calculations.
+- Test responsive layouts.
+- Check all routes and interactive controls.
+- Fix runtime errors.
+- Verify data isolation and recurring idempotency.
+
+Phase 7 — Delivery
+- Provide the complete source code.
+- Provide installation and startup instructions.
+- Explain environment configuration.
+- Document database setup and migrations.
+- Include test results and known limitations.
+
+# 24. ACCEPTANCE CRITERIA
+
+The project is not complete until:
+
+1. All required screens exist and share a consistent design system.
+2. Registration and login work using the chosen backend.
+3. Transactions can be created, edited, searched, filtered, and deleted.
+4. Categories and budgets support complete CRUD operations.
+5. Budget utilization and alerts are mathematically correct.
+6. Savings contributions update balances and history consistently.
+7. Recurring transactions prevent duplicate execution.
+8. Dashboard figures and charts reflect actual saved data.
+9. Reports use consistent calculations and date filters.
+10. Notifications can be managed and link to relevant records.
+11. Currency preferences affect formatting consistently.
+12. Users cannot access another user's private financial records.
+13. Data persists after refresh and a new login.
+14. All visible controls work as advertised.
+15. Mobile, tablet, and desktop layouts are usable.
+16. Validation, loading, error, and empty states are implemented.
+17. Automated tests cover the critical business rules.
+18. Setup instructions allow another developer to run the project.
+
+# 25. FINAL INSTRUCTIONS
+
+Prioritize correctness, maintainability, accessibility, and genuine functionality over simply adding more features.
+
+Do not delete important existing features without explanation.
+
+Do not replace backend functionality with static JSON and call it complete.
+
+Do not create fake buttons, fake charts, fake authentication, or fake persistence.
+
+Do not silently alter financial calculations or existing user data.
+
+Do not claim tests passed unless they were actually run.
+
+If a required external service is unavailable, implement a clear interface and document the configuration needed rather than pretending the integration works.
+
+Use sensible engineering defaults instead of repeatedly asking me to choose minor implementation details.
+
+Start by auditing the uploaded SpendWise.zip, then build the application systematically. If the environment has execution limits, prioritize a working foundation and complete vertical slices rather than generating many incomplete pages.
+
+At completion, summarize:
+- What was implemented
+- Which original features were preserved
+- Which features were improved or added
+- The technology stack
+- How to run the application
+- How to configure the database
+- Which tests were executed and their actual results
+- Any remaining limitations
+
+**Final objective: deliver a visually polished, reliable, responsive, genuinely functional SpendWise personal finance platform that preserves the original project's core functionality and is strong enough to demonstrate in a Python/full-stack developer portfolio.**
